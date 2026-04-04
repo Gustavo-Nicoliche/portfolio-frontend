@@ -1,425 +1,518 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO -->  
-    <title>Gustavo Nicoliche - Desenvolvedor Fullstack</title>
-    <meta
-        name = "description"
-        content = "Portfolio de Gustavo Nicoliche, desenvolvedor Fullstack. Especializado em Java, Spring Boot, HTML, CSS e JavaScipt."
-        />
-    <!-- TIPOGRAFIA -->
-    <link rel = "preconnect" href = "https>fonts.googleapis.com" />
-    <link rel = "preconnect" href = "https>//fonts.gstatic.com" crossorigin />
-    <link href= "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"
-    rel = "Stylesheet"
-    />
-    <!-- ICONE VIA LUCIDE -->
-    <script src = "https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <!-- ARQUIVO DE ESTILIZAÇÃO-->
-    <link rel="stylesheet" href="css/style.css"/>
-</head>
-<body>
-    <!-- HEADER / NAVlinks-->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <!-- LOGO-->
-            <a href="#hero" class="nav__logo">GN<span>.</div></span></a>
-            <!-- LINKS DE NAVEGAÇÃO -->
-            <ul class="nav__links">
-                <li><a href="#sobre" class="nav__link">Sobre</a></li>
-                <li><a href="#projetos" class="nav__link">Projetos</a></li>
-                <li><a href="#contato" class="nav__link">Contato</a></li>
-            </ul>
-            <!-- BOTÃO GITHUB-->
-            <a
-            href="https://github.com/Gustavo-Nicoliche"
-            target="__blank"
-            rel="noopener noreferrer"
-            class="btn btn--outline btn--sm"
-            >
-                <i data-lucide="github"> GITHUB </i>
-            </a>
-            <!-- BOTAO Hamburguer (MOBILE) -->
-            <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
-                <i data-lucide="menu"></i>
-            </button>
-        </nav>
-    </header>
-    <!-- FIM DO HEADER -->
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      viewport: garante que o site seja responsivo em dispositivos móveis.
+      width=device-width → largura do viewport = largura da tela do dispositivo
+      initial-scale=1.0  → sem zoom inicial
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- OVERLAY MENU -->
-    <div class="nav__mobile" id="novMobile">
-        <button class="nav__mobile-close" id="navClose" aria-label="Fechar menu">
-            <i data-lucide="x"></i>
-        </button>
-        <ul>
-            <li><a href="#sobre" class="nav__mobile-link"></a>Sobre</li>
-            <li><a href="#projetos" class="nav__mobile-link"></a>Projeto</li>
-            <li><a href="#contato" class="nav__mobile-link"></a>Contato</li>
-        </ul>
-    </div>
+```
+<!-- SEO: título que aparece na aba do navegador e no Google -->
+<title>Gustavo Nicoliche — Desenvolvedor Fullstack</title>
+<meta
+  name="description"
+  content="Portfólio de Gustavo Nicoliche, desenvolvedor Fullstack. Especializado em Java, Spring Boot, HTML, CSS e JavaScript."
+/>
 
-    <!-- SEÇÃO HERO -->
-    <section class="hero" id="hero">
-        <div class="hero__bg-grid"></div>
-        <div class="container hero__content">
+<!-- Google Fonts: tipografia elegante e profissional -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
 
-            <div class="hero__text">
-                <!-- status -->
-                <span class="hero__badge">
-                    <span class="hero__badge-dot"></span>
-                    Disponível para projetos!
-                </span>
+<!-- Ícones via Lucide (biblioteca leve de ícones SVG) -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
-                <h1 class="hero__title">
-                    Olá, eu sou<br />
-                    <em>Gustavo Nicoliche</em>
-                </h1>
+<!-- Nosso arquivo de estilos -->
+<link rel="stylesheet" href="css/style.css" />
+```
 
-                <p class="hero__subtitle">
-                    Desenvolvedor <strong>Fullstack</strong> apaixonado por criar soluções web completas - do backend em
-                    <strong>Java + Spring Boot</strong> até interfaces modernas
-                    com <strong>HTML, CSS e JavaScript</strong>
-                </p>
+  </head>
 
-                <!-- CTAS -->
-                <div class="hero__actions">
-                    <a href="#projetos" class="btn btn--primary">
-                        Ver projetos <i data-lucide="arrow-down"></i>
-                    </a>
-                    <a href="#contato" class="btn btn--outline">
-                        Entre em contato
-                    </a>
-                </div>
-                
-                <!-- STACK BADGES -->
-                 <div class="hero__stack">
-                    <span class="stack__badge">Java</span>
-                    <span class="stack__badge">Spring Boot</span>
-                    <span class="stack__badge">JavaScript</span>
-                    <span class="stack__badge">HTML & CSS</span>
-                    <span class="stack__badge">PostgreSQL</span>                    
-                 </div>
-            </div>
+  <body>
 
-            <!-- CARD DECORATIVO -->
-            <div class="hero__card" aria-hidden="true">
-                <div class="hero__card-header">
-                    <span class="dot dot--red"></span>
-                    <span class="dot dot--yellow"></span>
-                    <span class="dot dot--green"></span>
-                    <span class="hero__card-filename">HelloWorld.java</span>
-                </div>
-                <pre class="hero__code"><code>
-                    <span class="c-keyword">public class</span> <span class="c-class">Gustavo</span> {
-                    <span class="c-keyword">private</span> String role =
-                        <span class="c-string">"Fullstack Developer</span>;
-                    
-                    <span class="c-keyword">private</span> String[] stack = {
-                        <span class="c-string">"Java"</span>, <span class="c-string">"Spring Boot</span>,
-                        <span class="c-string">"JavaScript"</span>, <span class="c-string">"POstgreSQL"</span>
-                    };
-                    <span class="c-keyword">public</span> String greet() {
-                        <span class="c-keyword">return</span> <span class="c-string">"Vamos construir algo incrível?"</span>;
-                    }
-                }</code></pre>
-            </div>
-        </div>
+```
+<!-- ========================================
+     HEADER / NAVEGAÇÃO
+     Fixo no topo, com links âncora para
+     cada seção da página (one-page scroll)
+======================================== -->
+<header class="header" id="header">
+  <nav class="nav container">
+    <!-- Logo / nome curto -->
+    <a href="#hero" class="nav__logo">GN<span>.</span></a>
 
-        <!-- Seta de Scroll -->
-        <a href="#sobre" class="hero__scroll" aria-label="ROlar para baixo">
-            <i data-lucide="chevrons-down"></i>
-        </a>
-    </section>
+    <!-- Links de navegação -->
+    <ul class="nav__links">
+      <li><a href="#sobre" class="nav__link">Sobre</a></li>
+      <li><a href="#projetos" class="nav__link">Projetos</a></li>
+      <li><a href="#contato" class="nav__link">Contato</a></li>
+    </ul>
 
-    <!-- SEÇÃO SOBRE MIM -->
-    <section class="sobre" id="sobre">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">01 -Sobre</span>
-                <h2 class="section-title">Quem sou eu</h2>
-            </div>
-            <div class="sobre__grid">
-
-                <!-- AVATAR -->
-                <div class="sobre__avatar-wrap">
-                    <div class="sobre__avatar">
-                    <span>GN</span>
-                    </div>
-                    <div class="sobre__avatar-deco"></div>
-                </div>
-
-                <!--- TEXTO SOBRE MIM -->
-                <div class="sobre__text">
-                    <p>Sou <Strong>Gustavo da Gama Nicoliche</Strong>, desenvolvedor Fullstack focado em constuir aplicações web robustas e bem estruturadas.</p>
-                    <p>Estudo desenvolvimento de softwatr com dedicação, combinando o poder do Backend com <strong>Java e Spring Boot</strong> a interfaces funcionais e elegantes no Frontend com <strong>HTML, CSS e JavaScript</strong>.</p>
-                    <P>Acredito que bom código não é só sobre ser funcional - é sobre ser legível, escalável e de fácil manutenção. EStou sempre aprendendo e buscando evoluir como profissional de Tech</P>
-                    
-                    <!-- SKILLS -->
-                    <div class="skills__grid">
-                        <div class="skill-item">
-                            <i data-lucide="coffee"></i>
-                            <span>Java</span>
-                        </div>
-                        <div class="skill-item">
-                            <i data-lucide="leaf"></i>
-                            <span>Spring Boot</span>
-                        </div>
-                        <div class="skill-item">
-                            <i data-lucide="code-2"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i data-lucide="layout"></i>
-                            <span>HTML & CSS</span>
-                        </div>
-                        <div class="skill-item">
-                            <i data-lucide="database"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i data-lucide="git-branch"></i>
-                            <span>Git & GitHub</span>
-                        </div>
-                    </div>
-
-                    <a
-                    href="https://github.com/Gustavo-Nicoliche"
-                    target="__blank"
-                    rel="noopener noreferrer"
-                    class="btn btn--outline"
-                    >
-                    <i data-lucide="github"></i> Ver GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO PROJETOS -->
-    <section class="projetos" id="projetos">
-        <div class="container">
-
-            <div class="section-header">
-                <span class="section-label">02 - Projetos</span>
-                <h2 class="section-title">Meu trabalho</h2>
-                <p class="section-desc">Os projetos que estou construindo estarão disponíveis aqui, com links diretos para os repositórios no Github.</p>
-            </div>
-
-            <!-- EM BREVE -->
-            <div class="projetos__coming-soon">
-                <div class="coming-soon__icon">
-                    <i data-lucide="folder-git-2"></i>
-                </div>
-                <h3>Projetos em desenvolvimento</h3>
-                <p>Estou trabalhando nos meus primeiros projetos. Em breve eles aparecerão aqui com capturas de tela, descrição e links para seus respectivos repositórios</p>
-                <a href="https://github.com/Gustavo-Nicoliche"
-                    target="__blank"
-                    rel="noopener noreferrer"
-                    class="btn btn--outline"
-                    >
-                    <i data-lucide="github"></i> Acompanhe no GitHub
-                    </a>
-            </div>
-
-            <!--TEMPLATE CARD PROJETOS -->
-            <!--
-            <div class="projetos__grid">
-                <article class="projeto-card">
-                    <div class="projeto-card__img">
-                        <img src="img/projeto1.png" alt="Nome do Projeto">
-                        <div class="projeto-card__overlay">
-                            <a href="https://github.com/..."
-                            target="blank"
-                            class="btn btn--primary btn--sm">
-                            <i data-lucide="github"></i>Ver Repositório
-                            </a>
-                        </div>
-                    </div>
-                    <div class="projeto-card__body">
-                        <h3>Nome do Projeto</h3>
-                        <p>Descrição curta do projeto...</p>
-                        <div class="projeto-card__stack">
-                            <span>Java</span>
-                            <span>Spring Boot</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            -->
-
-        </div>
-    </section>
-
-    <!-- SEÇÃO CONTATO -->
-    <section class="contato" id="contato">
-        <div class="container">
-
-            <div class="section-header">
-                <span class="section-label">03 - Contato</span>
-                <h2 class="section-title">Vamos trabalhar juntos!</h2>
-                <p class="section-desc">
-                    Tem uma proposta de trabalho, projeto ou deseja conversar comigo?
-                    Me mande uma mensagem!
-                </p>
-            </div>
-
-            <div class="contato__grid">
-                <!-- Formulario de contato-->
-                 <!--
-                Action e method serao conectados À API SpringBoot.
-                Por enquanto o JD intercepta o Submit e fará chamada e fetch()
-                -->
-                <form class="contato__form" id="contactForm" novalidate>
-
-                    <div class="form__group">
-                        <label for="nome" class="form__label">Nome completo</label>
-                        <input
-                            type="text"
-                            id="nome"
-                            name="nome"
-                            class="form__input"
-                            placeholder="Seu nome"
-                            required    
-                        >
-                        <span class="form__error" id="nomeError"></span>
-                    </div>
-
-                    <div class="form__group">
-                        <label for="email" class="form__label">Email *</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            class="form__input"
-                            placeholder="seu@email.com"
-                            required    
-                        >
-                        <span class="form__error" id="emailError"></span>
-                    </div>
-
-                    <div class="form__group">
-                        <label for="assunto" class="form__label">Assunto *</label>
-                        <select id="assunto" name="assunto" class="form__input form__select" required>
-                            <option value="" disabled selected>Selecione o motivo</option>
-                            <option value="proposta">Proposta de trabalho</option>
-                            <option value="freelance">Projeto freelance</option>
-                            <option value="comentario">Comentário / Feedback</option>
-                            <option value="outro">Outro</option>
-                        </select>
-                        <span class="form__error" id="assuntoError"></span>
-                    </div>
-                    
-                    <div class="form__group">
-                        <label for="mensagem" class="form__label">Mensagem *</label>
-                        <textarea
-                            id="mensagem"
-                            name="mensagem"
-                            class="form__input form__textarea"
-                            placeholder="Escreva sua mensagem aqui..."
-                            rows="5"
-                            required
-                        ></textarea>
-                        <span class="form__error" id="mensagemError"></span>
-                    </div>
-
-                    <button type="submit" class="btn btn--primary btn-full" id="submitBtn">
-                        <i data-lucide="send"></i>
-                        <span>Enviar Mensagem</span>
-                    </button>
-
-                    <!-- FEEDBACK DE SUCESSO/ERRO-->
-                    <div class="form__feedback" id="formFeedback" hidden></div>
-                </form>
-
-                <!-- Card lateral com outras formas de contato-->
-                <div class="contato__aside">
-
-                    <div class="contato__info-card">
-                        <h3>Outras formas de contato</h3>
-
-                        <!-- WHATSAPP -->
-                        <a
-                            href="https://wa.me/5511988807709?text=Olá%20Gustavo%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto!"
-                            target="__blank"
-                            rel="noopener noreferrer"
-                            class="contato__link contato__link-whatsapp"
-                        >
-                            <div class="contato__link-icon">
-                                <i data-lucide="message=circle"></i>
-                            </div>
-                            <div>
-                                <strong>WHATSAPP</strong>
-                                <span>(11)99888-07709</span>
-                            </div>
-                            <i data-lucide="external-link" class="contato__link-arrow"></i>
-                        </a>
-
-                        <!-- GITHUB -->
-                        <a
-                            href="https://github.com/Gustavo-Nicoliche"
-                            target="__blank"
-                            rel="noopener noreferrer"
-                            class="contato__link"
-                        >
-                            <div class="contato__link-icon">
-                                <i data-lucide="github"></i>
-                            </div>
-                            <div>
-                                <strong>GITHUB</strong>
-                                <span>Gustavo-Nicoliche</span>
-                            </div>
-                            <i data-lucide="external-link" class="contato__link-arrow"></i>
-                        </a>
-                    </div>
-                    <div class="contato__tempo">
-                        <i data-lucide="clock"></i>
-                        <p>Responde em até <strong>24 horas</strong>.</p>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer__links">
-        <div class="container footer__content">
-            <p>
-                2026 <strong>Gustavo Nicoliche</strong>. Desenvolvido com Html, CSS e JavaScript & Spring Boot
-            </p>
-            <div class="footer__links">
-                <a
-                    href="https://github.com/Gustavo-Nicoliche"
-                    target="__blank"
-                    rel="noopener noreferrer"
-                >
-                    <i data-lucide="github"></i>
-                </a>
-            </div>
-        </div> 
-    </footer>
-    
-    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-    <a 
-        href="https://wa.me/5511988807709?text=Olá%20Gustavo%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto!"
-        target="__blank"
-        rel="noopener noreferrer"
-        class="whatsapp__float"
-        aria-label="Conversar no whatsapp"
-        >
-        <!-- Icone SVG do whatsapp -->
-        <svg viewBox="0 0 24 24" fill="currentColor"  width="28" height="28">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span class="whatsapp-float__tooptip">Fale comigo!</span>
+    <!-- Botão GitHub no header -->
+    <a
+      href="https://github.com/Gustavo-Nicoliche"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn--outline btn--sm"
+    >
+      <i data-lucide="github"></i> GitHub
     </a>
 
-    <script>lucide.createIcons();</script>
-    
-    <script src="js/main.js" defer></script>
+    <!-- Botão hambúrguer (mobile) — SVG inline para garantir renderização -->
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="24" height="24">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+</header>
 
-</body>
+<!-- Menu mobile (overlay) -->
+<div class="nav__mobile" id="navMobile">
+  <button class="nav__mobile-close" id="navClose" aria-label="Fechar menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="28" height="28">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+  <ul>
+    <li><a href="#sobre" class="nav__mobile-link">Sobre</a></li>
+    <li><a href="#projetos" class="nav__mobile-link">Projetos</a></li>
+    <li><a href="#contato" class="nav__mobile-link">Contato</a></li>
+  </ul>
+</div>
+
+<!-- ========================================
+     SEÇÃO HERO
+     Primeira coisa que o visitante vê.
+     Deve ser impactante e comunicar quem
+     você é em poucos segundos.
+======================================== -->
+<section class="hero" id="hero">
+  <div class="hero__bg-grid"></div>
+  <div class="container hero__content">
+
+    <div class="hero__text">
+      <!-- Tag de status — chama atenção e humaniza -->
+      <span class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Disponível para projetos
+      </span>
+
+      <h1 class="hero__title">
+        Olá, eu sou<br />
+        <em>Gustavo Nicoliche</em>
+      </h1>
+
+      <p class="hero__subtitle">
+        Desenvolvedor <strong>Fullstack</strong> apaixonado por criar
+        soluções web completas — do backend em
+        <strong>Java + Spring Boot</strong> até interfaces modernas
+        com <strong>HTML, CSS e JavaScript</strong>.
+      </p>
+
+      <!-- CTAs principais -->
+      <div class="hero__actions">
+        <a href="#projetos" class="btn btn--primary">
+          Ver projetos <i data-lucide="arrow-down"></i>
+        </a>
+        <a href="#contato" class="btn btn--outline">
+          Entre em contato
+        </a>
+      </div>
+
+      <!-- Stack resumida em badges -->
+      <div class="hero__stack">
+        <span class="stack-badge">Java</span>
+        <span class="stack-badge">Spring Boot</span>
+        <span class="stack-badge">JavaScript</span>
+        <span class="stack-badge">HTML & CSS</span>
+        <span class="stack-badge">PostgreSQL</span>
+      </div>
+    </div>
+
+    <!-- Card decorativo com código falso — visual de dev -->
+    <div class="hero__card" aria-hidden="true">
+      <div class="hero__card-header">
+        <span class="dot dot--red"></span>
+        <span class="dot dot--yellow"></span>
+        <span class="dot dot--green"></span>
+        <span class="hero__card-filename">HelloWorld.java</span>
+      </div>
+      <pre class="hero__code"><code><span class="c-keyword">public class</span> <span class="c-class">Gustavo</span> {
+```
+
+<span class="c-keyword">private</span> String role =
+<span class="c-string">“Fullstack Developer”</span>;
+
+<span class="c-keyword">private</span> String[] stack = {
+<span class="c-string">“Java”</span>, <span class="c-string">“Spring Boot”</span>,
+<span class="c-string">“JavaScript”</span>, <span class="c-string">“PostgreSQL”</span>
+};
+
+<span class="c-keyword">public</span> String greet() {
+<span class="c-keyword">return</span> <span class="c-string">“Vamos construir
+algo incrível?”</span>;
+}
+}</code></pre>
+</div>
+
+```
+  </div>
+
+  <!-- Seta de scroll -->
+  <a href="#sobre" class="hero__scroll" aria-label="Rolar para baixo">
+    <i data-lucide="chevrons-down"></i>
+  </a>
+</section>
+
+<!-- ========================================
+     SEÇÃO SOBRE MIM
+     Apresentação pessoal + valores +
+     habilidades técnicas.
+======================================== -->
+<section class="sobre" id="sobre">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">01 — Sobre</span>
+      <h2 class="section-title">Quem sou eu</h2>
+    </div>
+
+    <div class="sobre__grid">
+
+      <!-- Foto / avatar (placeholder por enquanto) -->
+      <div class="sobre__avatar-wrap">
+        <div class="sobre__avatar">
+          <span>GN</span>
+        </div>
+        <div class="sobre__avatar-deco"></div>
+      </div>
+
+      <!-- Texto sobre mim -->
+      <div class="sobre__text">
+        <p>
+          Sou <strong>Gustavo Da Gama Nicoliche</strong>, desenvolvedor
+          Fullstack em formação, com foco em construir aplicações web
+          robustas e bem estruturadas.
+        </p>
+        <p>
+          Estudo desenvolvimento de software com dedicação, combinando
+          o poder do backend com <strong>Java e Spring Boot</strong>
+          a interfaces funcionais e elegantes no frontend com
+          <strong>HTML, CSS e JavaScript</strong>.
+        </p>
+        <p>
+          Acredito que bom código não é só aquele que funciona —
+          é aquele que é legível, escalável e fácil de manter.
+          Estou sempre aprendendo e buscando evoluir como profissional.
+        </p>
+
+        <!-- Skills em grid -->
+        <div class="skills__grid">
+          <div class="skill-item">
+            <i data-lucide="coffee"></i>
+            <span>Java</span>
+          </div>
+          <div class="skill-item">
+            <i data-lucide="leaf"></i>
+            <span>Spring Boot</span>
+          </div>
+          <div class="skill-item">
+            <i data-lucide="code-2"></i>
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <i data-lucide="layout"></i>
+            <span>HTML & CSS</span>
+          </div>
+          <div class="skill-item">
+            <i data-lucide="database"></i>
+            <span>PostgreSQL</span>
+          </div>
+          <div class="skill-item">
+            <i data-lucide="git-branch"></i>
+            <span>Git & GitHub</span>
+          </div>
+        </div>
+
+        <a
+          href="https://github.com/Gustavo-Nicoliche"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--primary"
+        >
+          <i data-lucide="github"></i> Ver GitHub
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SEÇÃO PROJETOS
+     Cards de projetos com imagem, descrição,
+     stack usada e link para o repositório.
+     Por enquanto: "Em breve"
+======================================== -->
+<section class="projetos" id="projetos">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">02 — Projetos</span>
+      <h2 class="section-title">Meu trabalho</h2>
+      <p class="section-desc">
+        Os projetos que estou construindo estarão disponíveis aqui,
+        com links diretos para os repositórios no GitHub.
+      </p>
+    </div>
+
+    <!-- Estado "Em breve" -->
+    <div class="projetos__coming-soon">
+      <div class="coming-soon__icon">
+        <i data-lucide="folder-git-2"></i>
+      </div>
+      <h3>Projetos em desenvolvimento</h3>
+      <p>
+        Estou trabalhando nos meus primeiros projetos. Em breve eles
+        aparecerão aqui com capturas de tela, descrição e links
+        para o GitHub.
+      </p>
+      <a
+        href="https://github.com/Gustavo-Nicoliche"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn--outline"
+      >
+        <i data-lucide="github"></i> Acompanhe no GitHub
+      </a>
+    </div>
+
+    <!--
+      TEMPLATE DE CARD DE PROJETO (comentado)
+      Quando tiver projetos, basta descomentar e
+      duplicar este bloco para cada projeto.
+
+      <div class="projetos__grid">
+        <article class="projeto-card">
+          <div class="projeto-card__img">
+            <img src="img/projeto1.png" alt="Nome do Projeto" />
+            <div class="projeto-card__overlay">
+              <a href="https://github.com/..." target="_blank" class="btn btn--primary btn--sm">
+                <i data-lucide="github"></i> Ver repositório
+              </a>
+            </div>
+          </div>
+          <div class="projeto-card__body">
+            <h3>Nome do Projeto</h3>
+            <p>Descrição curta do projeto...</p>
+            <div class="projeto-card__stack">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    -->
+
+  </div>
+</section>
+
+<!-- ========================================
+     SEÇÃO CONTATO
+     Formulário que enviará os dados para
+     nossa API Spring Boot (próximas etapas).
+     Também exibe o botão de WhatsApp.
+======================================== -->
+<section class="contato" id="contato">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">03 — Contato</span>
+      <h2 class="section-title">Vamos conversar?</h2>
+      <p class="section-desc">
+        Tem uma proposta de trabalho, projeto ou só quer trocar uma ideia?
+        Me manda uma mensagem!
+      </p>
+    </div>
+
+    <div class="contato__grid">
+
+      <!-- Formulário de contato -->
+      <!--
+        action e method serão conectados à API Spring Boot.
+        Por enquanto o JS intercepta o submit e fará a chamada fetch().
+      -->
+      <form class="contato__form" id="contactForm" novalidate>
+
+        <div class="form__group">
+          <label for="nome" class="form__label">Nome completo *</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            class="form__input"
+            placeholder="Seu nome"
+            required
+          />
+          <!-- Mensagem de erro exibida pelo JS -->
+          <span class="form__error" id="nomeError"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="email" class="form__label">E-mail *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form__input"
+            placeholder="seu@email.com"
+            required
+          />
+          <span class="form__error" id="emailError"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="assunto" class="form__label">Assunto *</label>
+          <select id="assunto" name="assunto" class="form__input form__select" required>
+            <option value="" disabled selected>Selecione o motivo</option>
+            <option value="proposta">Proposta de trabalho</option>
+            <option value="freelance">Projeto freelance</option>
+            <option value="comentario">Comentário / Feedback</option>
+            <option value="outro">Outro</option>
+          </select>
+          <span class="form__error" id="assuntoError"></span>
+        </div>
+
+        <div class="form__group">
+          <label for="mensagem" class="form__label">Mensagem *</label>
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            class="form__input form__textarea"
+            placeholder="Escreva sua mensagem aqui..."
+            rows="5"
+            required
+          ></textarea>
+          <span class="form__error" id="mensagemError"></span>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+          <i data-lucide="send"></i>
+          <span>Enviar mensagem</span>
+        </button>
+
+        <!-- Feedback de sucesso/erro após submit -->
+        <div class="form__feedback" id="formFeedback" hidden></div>
+
+      </form>
+
+      <!-- Card lateral com outras formas de contato -->
+      <div class="contato__aside">
+
+        <div class="contato__info-card">
+          <h3>Outras formas de contato</h3>
+
+          <!-- WhatsApp -->
+          <a
+            href="https://wa.me/5511988807709?text=Olá%20Gustavo%2C%20vim%20pelo%20seu%20portfólio!"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contato__link contato__link--whatsapp"
+          >
+            <div class="contato__link-icon">
+              <i data-lucide="message-circle"></i>
+            </div>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>(11) 98880-7709</span>
+            </div>
+            <i data-lucide="external-link" class="contato__link-arrow"></i>
+          </a>
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/Gustavo-Nicoliche"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contato__link"
+          >
+            <div class="contato__link-icon">
+              <i data-lucide="github"></i>
+            </div>
+            <div>
+              <strong>GitHub</strong>
+              <span>Gustavo-Nicoliche</span>
+            </div>
+            <i data-lucide="external-link" class="contato__link-arrow"></i>
+          </a>
+
+        </div>
+
+        <div class="contato__tempo">
+          <i data-lucide="clock"></i>
+          <p>Respondo em até <strong>24 horas</strong> nos dias úteis.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+<footer class="footer">
+  <div class="container footer__content">
+    <p>
+      © 2025 <strong>Gustavo Nicoliche</strong>. Desenvolvido com
+      HTML, CSS, JavaScript & Spring Boot.
+    </p>
+    <div class="footer__links">
+      <a href="https://github.com/Gustavo-Nicoliche" target="_blank" rel="noopener noreferrer">
+        <i data-lucide="github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================================
+     BOTÃO FLUTUANTE DO WHATSAPP
+     Fixo no canto inferior direito.
+     Aparece em todas as seções.
+======================================== -->
+<a
+  href="https://wa.me/5511988807709?text=Olá%20Gustavo%2C%20vim%20pelo%20seu%20portfólio!"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-float"
+  aria-label="Conversar no WhatsApp"
+>
+  <!-- Ícone SVG do WhatsApp (não está no Lucide) -->
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="whatsapp-float__tooltip">Fale comigo!</span>
+</a>
+
+<!-- Inicializa os ícones Lucide ANTES do main.js -->
+<script>lucide.createIcons();</script>
+
+<!-- Nosso arquivo JavaScript -->
+<script src="js/main.js" defer></script>
+```
+
+  </body>
 </html>
