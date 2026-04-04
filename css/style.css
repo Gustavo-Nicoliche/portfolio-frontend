@@ -1146,9 +1146,39 @@ input, textarea, select {
     justify-content: center;
   }
 
+  /* Corrige card de código no mobile */
+  .hero__card {
+    max-width: 100%;
+    margin-inline: 0;
+  }
+
+  .hero__code {
+    font-size: 0.72rem;
+    padding: var(--space-4);
+    overflow-x: auto;
+    white-space: pre;
+    text-align: left;
+  }
+
+  .hero__content {
+    overflow: hidden;
+  }
+
+  /* Footer organizado */
   .footer__content {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-3);
+  }
+
+  .footer__content p {
+    font-size: var(--text-xs);
+    line-height: 1.6;
+  }
+
+  /* Esconde tooltip do WhatsApp no mobile */
+  .whatsapp-float__tooltip {
+    display: none;
   }
 
   .whatsapp-float {

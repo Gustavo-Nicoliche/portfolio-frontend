@@ -65,8 +65,10 @@ const unlockScroll = () => document.body.style.overflow = '';
 navToggle.addEventListener('click', () => {
 navMobile.classList.add('open');
 lockScroll();
-// Reinicializa ícones Lucide dentro do menu (se necessário)
-if (typeof lucide !== 'undefined') lucide.createIcons();
+// Reinicializa ícones Lucide dentro do menu
+if (typeof lucide !== 'undefined') {
+lucide.createIcons();
+}
 });
 navClose.addEventListener('click', () => {
 navMobile.classList.remove('open');
@@ -317,4 +319,8 @@ Código que roda assim que o JS é carregado.
 // Marca o link "Hero" como ativo ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
 console.log(' Portfólio de Gustavo Nicoliche carregado.');
+// Garante que todos os ícones foram renderizados
+if (typeof lucide !== 'undefined') {
+lucide.createIcons();
+}
 });
