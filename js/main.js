@@ -144,7 +144,7 @@ const contactForm = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 const formFeedback = document.getElementById('formFeedback');
 // URL base da API — altere para a URL do servidor em produção
-const API_BASE_URL = 'http://localhost:8080';
+const API_BASE_URL = 'https://portfolio-backend-production-0cbc.up.railway.app';
 /**
 * Valida um campo individualmente.
 * @param {HTMLElement} input - O campo a validar
